@@ -1,5 +1,7 @@
 /** Domain types for the Bingo game */
 
+export type GameMode = 'bingo' | 'card-deck';
+
 export interface BingoSquareData {
   id: number;
   text: string;
@@ -14,3 +16,8 @@ export interface BingoLine {
 }
 
 export type GameState = 'start' | 'playing' | 'bingo';
+
+export interface CardDeckState {
+  currentIndex: number;
+  shuffledQuestions: string[];
+}

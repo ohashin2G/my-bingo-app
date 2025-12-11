@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
-  --color-marked: #dcfce7;
-  --color-marked-border: #22c55e;
-  --color-bingo: #fbbf24;
+  --color-espresso: #2f1f1b;
+  --color-mocha: #4a342a;
+  --color-caramel: #d5a46f;
+  --color-foam: #f6efe7;
+  --color-foam-strong: #ede3d7;
+  --color-leaf: #6d8b68;
+  --color-berry: #b86b53;
+  --color-ink: #1b1917;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', 'Manrope', serif;
 }
 
 html,
@@ -16,6 +22,24 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
+  background: radial-gradient(circle at 20% 20%, #fdf8f2 0, #f6efe7 35%, #f0e6d8 65%, #eadfce 100%);
+  color: var(--color-espresso);
+}
+
+.coffee-paper {
+  background: linear-gradient(135deg, #f9f3ea 0%, #f3e7d7 60%, #ecdec7 100%);
+  box-shadow: 0 18px 50px -24px rgba(25, 16, 10, 0.45);
+}
+
+.coffee-card {
+  background: linear-gradient(145deg, #f8f1e7 0%, #f1e5d5 50%, #e8dac2 100%);
+  box-shadow: 0 10px 30px -18px rgba(25, 16, 10, 0.5);
+}
+
+.coffee-steam {
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.65), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.4), transparent 45%);
 }
