@@ -1,11 +1,25 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
+  /* Monochromatic espresso/mocha palette */
+  --color-espresso: #2d1b14;
+  --color-mocha: #5c4033;
+  --color-cream: #f5f1ed;
+  --color-warm-white: #fdfcfb;
+  
+  /* Single accent color - leaf green for freshness */
+  --color-leaf: #4a7c59;
+  --color-leaf-light: #5d9970;
+  
+  /* Game state colors (keeping existing for game board) */
+  --color-accent: #4a7c59;
+  --color-accent-light: #5d9970;
   --color-marked: #dcfce7;
   --color-marked-border: #22c55e;
   --color-bingo: #fbbf24;
+  
+  /* Typography */
+  --font-display: "Playfair Display", Georgia, serif;
 }
 
 html,

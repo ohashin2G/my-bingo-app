@@ -4,26 +4,66 @@ interface StartScreenProps {
 
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-      <div className="text-center max-w-sm">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p className="text-lg text-gray-600 mb-8">Social Bingo</p>
-        
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-          <h2 className="font-semibold text-gray-800 mb-3">How to play</h2>
-          <ul className="text-left text-gray-600 text-sm space-y-2">
-            <li>• Find people who match the questions</li>
-            <li>• Tap a square when you find a match</li>
-            <li>• Get 5 in a row to win!</li>
-          </ul>
+    <div className="min-h-full flex flex-col md:flex-row bg-warm-white">
+      {/* Left Side - Compelling Text */}
+      <div className="flex-1 flex flex-col justify-center px-8 py-16 md:px-16 lg:px-24 bg-espresso text-cream">
+        <div className="max-w-2xl">
+          <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8">
+            Break the Ice.<br />Make Connections.
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-cream/80 leading-relaxed mb-12 max-w-xl">
+            Transform awkward introductions into engaging conversations with social bingo
+          </p>
+          
+          <button
+            onClick={onStart}
+            className="inline-flex items-center justify-center bg-leaf hover:bg-leaf-light text-warm-white font-bold text-xl px-12 py-6 transition-all duration-200 active:scale-95"
+          >
+            Start Playing
+          </button>
+          
+          <div className="mt-16 space-y-3 text-sm text-cream/60 tracking-wide uppercase">
+            <p>Find matches • Mark squares • Win bingo</p>
+          </div>
         </div>
-
-        <button
-          onClick={onStart}
-          className="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors"
-        >
-          Start Game
-        </button>
+      </div>
+      
+      {/* Right Side - Minimalist Visual */}
+      <div className="flex-1 flex items-center justify-center p-8 md:p-16 relative overflow-hidden">
+        {/* Abstract Geometric Bingo Grid Visual */}
+        <div className="relative w-full max-w-md aspect-square">
+          {/* Large minimalist grid pattern */}
+          <div className="grid grid-cols-5 gap-2 w-full h-full">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-mocha/10 hover:bg-mocha/20 transition-colors"
+                style={{
+                  animationDelay: `${i * 0.03}s`,
+                  animation: 'fadeIn 0.6s ease-out forwards',
+                  opacity: 0
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Accent highlight on center square */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[19%] h-[19%] bg-leaf/30 border-4 border-leaf" />
+        </div>
+        
+        <style>{`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        `}</style>
       </div>
     </div>
   );
