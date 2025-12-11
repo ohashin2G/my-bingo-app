@@ -41,21 +41,23 @@ Adding a new game mode where each player draws random question cards by tapping,
 - Keep StartScreen mode selector simple (two buttons)
 - Card component should be standalone and reusable
 
-## Iteration 1: Foundation
-- [ ] Design spec created
-- [ ] Types extended for mode selection
-- [ ] StartScreen updated with mode picker
-- [ ] Basic CardDeckScreen shell
-- [ ] Routing in App.tsx
+## Iteration 1: Foundation ✅
+- [x] Design spec created
+- [x] Types extended for mode selection (GameMode, CardDeckState)
+- [x] StartScreen updated with two-button mode picker
+- [x] CardDeckScreen component with coffee theme styling
+- [x] Routing in App.tsx based on gameMode
 
-## Iteration 2: Card Display & Interaction
-- [ ] Card styling with coffee theme
-- [ ] Tap-to-draw interaction
-- [ ] Shuffle logic in hook
-- [ ] Progress indicator
+### Implementation Highlights
+- **Mode Selection**: Side-by-side buttons with icons (🎲 Bingo / 🃏 Card Deck)
+- **Card Styling**: Large tactile card using .coffee-card class with steam effect
+- **Full Integration**: useBingoGame hook extended with shuffleArray, drawNextCard, resetCardDeck
+- **State Persistence**: Storage version bumped to v2 with cardDeck state
+- **End State**: Celebration screen when all cards drawn with reshuffle button
 
-## Iteration 3: Polish
-- [ ] Smooth transitions
-- [ ] End-of-deck handling
-- [ ] State persistence
-- [ ] Responsive refinement
+## Next Steps (Optional Polish)
+- [ ] Add swipe gestures for mobile (left/right to draw)
+- [ ] Card flip animation on draw
+- [ ] Sound effects on tap
+- [ ] Share card to social media
+- [ ] Multiple deck themes
