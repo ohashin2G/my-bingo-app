@@ -17,7 +17,7 @@ export function GameScreen({
   onReset,
 }: GameScreenProps) {
   return (
-    <div className="min-h-full bg-gradient-to-b from-foam to-foam-strong flex flex-col">
+    <div className="min-h-full bg-linear-to-b from-foam to-foam-strong flex flex-col">
       <header className="px-4 md:px-8 py-4 flex items-center justify-between border-b border-foam-strong/80 bg-white/70 backdrop-blur shadow-xs">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full bg-caramel/80 flex items-center justify-center text-espresso shadow-inner">
@@ -30,7 +30,7 @@ export function GameScreen({
         </div>
         <button
           onClick={onReset}
-          className="text-sm font-semibold text-espresso px-4 py-2 rounded-lg bg-foam shadow-xs border border-foam-strong/80 active:translate-y-[1px]"
+          className="text-sm font-semibold text-espresso px-4 py-2 rounded-lg bg-foam shadow-xs border border-foam-strong/80 active:translate-y-px"
         >
           Brew a fresh card
         </button>
